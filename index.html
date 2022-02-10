@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Focus</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+  <!-- Overlay -->
+  <div class="overlay"></div>
+
+    <!-- Navbar Section -->
+    <section class='section1'>
+        <nav class="navbar navbar-dark fixed-top">
+            <div class="container">
+              <form class="d-flex col form mt-2">
+                <input class="form-control me-2 input" type="search" placeholder="City, State or Country..." aria-label="Search">
+                <button class="btn searchButton" type="submit">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                  </svg>
+                </button>
+              </form>
+            </div>
+          </nav>
+    </section><br><br>
+    <div class="text-white mt-4">
+      <div class="container text-center errorSection">
+        
+      </div>
+    </div>
+
+
+    <!-- Body -->
+    <section class='section2'>
+      <div class="container mt-4">
+        <div class="row mt-4 p-2">
+          <!-- Searched Api results -->
+          <div class="col-md-5 col-lg-5 col-xs-12 col-sm-12 card card1 p-4 mb-4 text-white">
+            <h3 class="display-6 locationHeading mb-4">
+
+             <!-- Location svg icon & heading -->
+             
+            </h3>
+            <p class="small currentDate"></p>
+
+            <div class="degrees">
+              <div class="degrees__celcius position-relative">
+                <div class="mainIcon">
+                  <!-- cloud icon svg -->
+                  <svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" fill="currentColor" class="bi bi-clouds-fill clouds" viewBox="0 0 16 16">
+                    <path d="M11.473 9a4.5 4.5 0 0 0-8.72-.99A3 3 0 0 0 3 14h8.5a2.5 2.5 0 1 0-.027-5z"/>
+                    <path d="M14.544 9.772a3.506 3.506 0 0 0-2.225-1.676 5.502 5.502 0 0 0-6.337-4.002 4.002 4.002 0 0 1 7.392.91 2.5 2.5 0 0 1 1.17 4.769z"/>
+                  </svg>
+                </div>
+
+                <!-- Temparature in deg -->
+                <h1 class="display-1 position-absolute end-0 h1 tempConverted" style="font-size: 60px;"><i>0</i><sup class="fw-light">°</sup></h1>
+              </div>
+
+
+              <div class="degrees__feels-like">
+                <p class="descriptionWeather"><i></i></p>
+                <p class="max">mb: 0</p>
+                <p class="min">HUM: 0</p>
+                <p class="feelsLike">feels like 0<sup class="">°</sup></p>
+              </div>
+            </div>
+
+            <!-- Main(all readings) -->
+            <hr style="color: white; height: 2px;">
+
+            <div class="row allReadings mt-4">
+
+              <!-- First Day -->
+              <div class="day1">
+                <!-- Actual day -->
+                <p class="bg-dark text-center day">Mon</p>
+
+                <!-- Icon -->
+                <div class = 'weatherIcon'>
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-clouds-fill svg" viewBox="0 0 16 16">
+                  <path d="M11.473 9a4.5 4.5 0 0 0-8.72-.99A3 3 0 0 0 3 14h8.5a2.5 2.5 0 1 0-.027-5z"/>
+                  <path d="M14.544 9.772a3.506 3.506 0 0 0-2.225-1.676 5.502 5.502 0 0 0-6.337-4.002 4.002 4.002 0 0 1 7.392.91 2.5 2.5 0 0 1 1.17 4.769z"/>
+                </svg>
+                </div>
+                <p class = 'mt-3'><span class = "bg-dark p-1 text-muted">Min:</span> <span class="min-temp">0.0°</span></p>
+                <p><span class="bg-dark p-1 text-muted">Max:</span> <span class="max-temp">0.0 °</span></p>
+              </div>
+
+              <!-- Second Day -->
+              <div class="day2">
+                <!-- Actual day -->
+                <p class="bg-dark text-center day">Tue</p>
+
+                <!-- Icon -->
+                <div class = 'weatherIcon'>
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-clouds-fill svg" viewBox="0 0 16 16">
+                  <path d="M11.473 9a4.5 4.5 0 0 0-8.72-.99A3 3 0 0 0 3 14h8.5a2.5 2.5 0 1 0-.027-5z"/>
+                  <path d="M14.544 9.772a3.506 3.506 0 0 0-2.225-1.676 5.502 5.502 0 0 0-6.337-4.002 4.002 4.002 0 0 1 7.392.91 2.5 2.5 0 0 1 1.17 4.769z"/>
+                </svg>
+                </div>
+                <p class = 'mt-3'><span class = "bg-dark p-1 text-muted">Min:</span> <span class="min-temp">0.0°</span></p>
+                <p><span class="bg-dark p-1 text-muted">Max:</span> <span class="max-temp">0.0 °</span></p>
+              </div>
+
+              <!-- Third Day -->
+              <div class="day3">
+                <!-- Actual day -->
+                <p class="bg-dark text-center day">Wed</p>
+
+                <!-- Icon -->
+                <div class = 'weatherIcon'>
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-clouds-fill svg" viewBox="0 0 16 16">
+                  <path d="M11.473 9a4.5 4.5 0 0 0-8.72-.99A3 3 0 0 0 3 14h8.5a2.5 2.5 0 1 0-.027-5z"/>
+                  <path d="M14.544 9.772a3.506 3.506 0 0 0-2.225-1.676 5.502 5.502 0 0 0-6.337-4.002 4.002 4.002 0 0 1 7.392.91 2.5 2.5 0 0 1 1.17 4.769z"/>
+                </svg>
+                </div>
+                <p class = 'mt-3'><span class = "bg-dark p-1 text-muted">Min:</span> <span class="min-temp">0.0°</span></p>
+                <p><span class="bg-dark p-1 text-muted">Max:</span> <span class="max-temp">0.0 °</span></p>
+              </div>
+
+              <!-- Fourth Day -->
+              <div class="day4">
+                <!-- Actual day -->
+                <p class="bg-dark text-center day">Thur</p>
+
+                <!-- Icon -->
+                <div class = 'weatherIcon'>
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-clouds-fill svg" viewBox="0 0 16 16">
+                  <path d="M11.473 9a4.5 4.5 0 0 0-8.72-.99A3 3 0 0 0 3 14h8.5a2.5 2.5 0 1 0-.027-5z"/>
+                  <path d="M14.544 9.772a3.506 3.506 0 0 0-2.225-1.676 5.502 5.502 0 0 0-6.337-4.002 4.002 4.002 0 0 1 7.392.91 2.5 2.5 0 0 1 1.17 4.769z"/>
+                </svg>
+                </div>
+                <p class = 'mt-3'><span class = "bg-dark p-1 text-muted">Min:</span> <span class="min-temp">0.0°</span></p>
+                <p><span class="bg-dark p-1 text-muted">Max:</span> <span class="max-temp">0.0 °</span></p>
+              </div>
+
+              <!-- Fifth Day -->
+              <div class="day5">
+                <!-- Actual day -->
+                <p class="bg-dark text-center day">Fri</p>
+
+                <!-- Icon -->
+                <div class = 'weatherIcon'>
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-clouds-fill svg" viewBox="0 0 16 16">
+                  <path d="M11.473 9a4.5 4.5 0 0 0-8.72-.99A3 3 0 0 0 3 14h8.5a2.5 2.5 0 1 0-.027-5z"/>
+                  <path d="M14.544 9.772a3.506 3.506 0 0 0-2.225-1.676 5.502 5.502 0 0 0-6.337-4.002 4.002 4.002 0 0 1 7.392.91 2.5 2.5 0 0 1 1.17 4.769z"/>
+                </svg>
+                </div>
+                <p class = 'mt-3'><span class = "bg-dark p-1 text-muted">Min:</span> <span class="min-temp">0.0°</span></p>
+                <p><span class="bg-dark p-1 text-muted">Max:</span> <span class="max-temp">0.0 °</span></p>
+              </div>
+              
+            </div>
+          </div>
+
+          <!-- One time call -->
+          <div class="col-md-5 col-lg-5 col-xs-12 col-sm-12 card card2 p-4  mb-4 text-white">
+            <h3 class="display-4 mb-4">
+              <!-- Icon -->
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
+                </svg>
+              <i>
+                <b class="yourLocation">Location,</b>
+                <span class="fw-light fs-6 yourCountry">Capital</span>
+              </i>
+            </h3>
+            <div class="row currentDegreeClouds mb-4">
+              <div class = 'currentDegrees'>
+                <h1 class="display-3">20°</h1>
+              </div>
+              <div class="currentSvg">
+                <svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" fill="currentColor" class="bi bi-clouds clouds" viewBox="0 0 16 16">
+                  <path d="M16 7.5a2.5 2.5 0 0 1-1.456 2.272 3.513 3.513 0 0 0-.65-.824 1.5 1.5 0 0 0-.789-2.896.5.5 0 0 1-.627-.421 3 3 0 0 0-5.22-1.625 5.587 5.587 0 0 0-1.276.088 4.002 4.002 0 0 1 7.392.91A2.5 2.5 0 0 1 16 7.5z"/>
+                  <path d="M7 5a4.5 4.5 0 0 1 4.473 4h.027a2.5 2.5 0 0 1 0 5H3a3 3 0 0 1-.247-5.99A4.502 4.502 0 0 1 7 5zm3.5 4.5a3.5 3.5 0 0 0-6.89-.873.5.5 0 0 1-.51.375A2 2 0 1 0 3 13h8.5a1.5 1.5 0 1 0-.376-2.953.5.5 0 0 1-.624-.492V9.5z"/>
+                </svg>
+              </div>
+            </div>
+            <p class="text-center currentDescription"><b><i>Description</i></b></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Javascript -->
+    <script src="js/index.js"></script>
+    <script src="js/currentLocation.js"></script>
+</body>
+</html>
