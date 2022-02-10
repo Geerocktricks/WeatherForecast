@@ -12035,19 +12035,13 @@ body {
 }
 
 body .overlay {
-  min-height: 150vh;
+  height: 110vh;
   width: 100%;
   position: absolute;
   top: 0;
   left: 0;
   background-color: rgba(0, 0, 0, 0.2);
   background-attachment: fixed;
-}
-
-@media (min-width: 768px) {
-  body .overlay {
-    min-height: 130vh;
-  }
 }
 
 .section2 .container .row .card1 .degrees {
@@ -12067,6 +12061,12 @@ body .overlay {
   display: grid;
   -ms-grid-columns: (2fr)[5];
       grid-template-columns: repeat(5, 2fr);
+}
+
+@media (max-width: 575.98px) {
+  .section2 .container .row .card2 {
+    display: none;
+  }
 }
 
 @media (min-width: 768px) {
