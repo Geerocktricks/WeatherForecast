@@ -12035,7 +12035,7 @@ body {
 }
 
 body .overlay {
-  min-height: 155vh;
+  height: 110vh;
   width: 100%;
   position: absolute;
   top: 0;
@@ -12061,6 +12061,12 @@ body .overlay {
   display: grid;
   -ms-grid-columns: (2fr)[5];
       grid-template-columns: repeat(5, 2fr);
+}
+
+@media (max-width: 575.98px) {
+  .section2 .container .row .card2 {
+    display: none;
+  }
 }
 
 @media (min-width: 768px) {
